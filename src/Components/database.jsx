@@ -1,57 +1,42 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
-
+let newState = [];
 class Database extends Component {
   constructor() {
     super();
     this.state = {
-      currentItem: '',
-      username: '',
-      items: []
+      player: []
     };
-
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const itemsRef = firebase.database().ref('items');
+    const itemsRef = firebase.database().ref('room_kortrijk');
     const item = {
-      title: this.state.currentItem,
-      user: this.state.username
+      player: 'logged in'
     };
-    itemsRef.push(item);
-    this.setState({
-      currentItem: '',
-      username: ''
-    });
+    console.log(itemsRef);
+    if (newState.length < 2) {
+      itemsRef.push(item);
+    }
+
     itemsRef.on('value', snapshot => {
       console.log(snapshot.val());
     });
   }
 
   componentDidMount() {
-    const itemsRef = firebase.database().ref('items');
+    const itemsRef = firebase.database().ref('room_kortrijk');
     itemsRef.on('value', snapshot => {
       let items = snapshot.val();
-      let newState = [];
+
       for (let item in items) {
         newState.push({
-          id: item,
-          title: items[item].title,
-          user: items[item].user
+          id: item
         });
       }
-      this.setState({
-        items: newState
-      });
+      console.log(newState);
     });
   }
 
@@ -60,41 +45,18 @@ class Database extends Component {
       <div className="app">
         <header>
           <div className="wrapper">
-            <h1>Fun Food Friends</h1>
+            <h1>Get in room</h1>
           </div>
         </header>
         <div className="container">
           <section className="add-item">
             <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                name="username"
-                placeholder="What's your name?"
-                onChange={this.handleChange}
-                value={this.state.username}
-              />
-              <input
-                type="text"
-                name="currentItem"
-                placeholder="What are you bringing?"
-                onChange={this.handleChange}
-                value={this.state.currentItem}
-              />
-              <button>Add Item</button>
+              <button>Start</button>
             </form>
           </section>
           <section className="display-item">
             <div className="wrapper">
-              <ul>
-                {this.state.items.map(item => {
-                  return (
-                    <li key={item.id}>
-                      <h3>{item.title}</h3>
-                      <p>brought by: {item.user}</p>
-                    </li>
-                  );
-                })}
-              </ul>
+              <ul></ul>
             </div>
           </section>
         </div>
