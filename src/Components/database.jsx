@@ -6,7 +6,8 @@ class Database extends Component {
     super();
     this.state = {
       currentItem: '',
-      username: ''
+      username: '',
+      items: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,6 +31,27 @@ class Database extends Component {
     this.setState({
       currentItem: '',
       username: ''
+    });
+    itemsRef.on('value', snapshot => {
+      console.log(snapshot.val());
+    });
+  }
+
+  componentDidMount() {
+    const itemsRef = firebase.database().ref('items');
+    itemsRef.on('value', snapshot => {
+      let items = snapshot.val();
+      let newState = [];
+      for (let item in items) {
+        newState.push({
+          id: item,
+          title: items[item].title,
+          user: items[item].user
+        });
+      }
+      this.setState({
+        items: newState
+      });
     });
   }
 
@@ -63,7 +85,16 @@ class Database extends Component {
           </section>
           <section className="display-item">
             <div className="wrapper">
-              <ul></ul>
+              <ul>
+                {this.state.items.map(item => {
+                  return (
+                    <li key={item.id}>
+                      <h3>{item.title}</h3>
+                      <p>brought by: {item.user}</p>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </section>
         </div>
