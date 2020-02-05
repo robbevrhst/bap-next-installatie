@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
+import { withRouter, Link } from 'react-router-dom';
+import { inject, observer, PropTypes } from 'mobx-react';
 let newState = [];
+
 class Database extends Component {
   constructor() {
     super();
     this.state = {
-      player: []
+      player: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,31 +19,27 @@ class Database extends Component {
     const item = {
       player: 'logged in'
     };
-    console.log(itemsRef);
     if (newState.length < 2) {
       itemsRef.push(item);
     }
-
-    itemsRef.on('value', snapshot => {
-      console.log(snapshot.val());
-    });
+    this.props.history.push('/nameform');
   }
 
   componentDidMount() {
     const itemsRef = firebase.database().ref('room_kortrijk');
     itemsRef.on('value', snapshot => {
       let items = snapshot.val();
-
+      console.log(items);
       for (let item in items) {
         newState.push({
           id: item
         });
       }
-      console.log(newState);
     });
   }
 
-  render() {
+  render({ store }) {
+    console.log(store);
     return (
       <div className="app">
         <header>
@@ -51,7 +50,7 @@ class Database extends Component {
         <div className="container">
           <section className="add-item">
             <form onSubmit={this.handleSubmit}>
-              <button>Start</button>
+              <Link>Start</Link>
             </form>
           </section>
           <section className="display-item">
@@ -64,4 +63,9 @@ class Database extends Component {
     );
   }
 }
-export default Database;
+//export default withRouter(Database);
+Database.propTypes = {
+  store: PropTypes.observableObject.isRequired
+};
+//export default Database;
+export default inject(`store`)(withRouter(observer(Database)));
