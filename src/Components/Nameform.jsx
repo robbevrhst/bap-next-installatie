@@ -7,31 +7,32 @@ let db = firebase.database();
 const max_lobby_players = 2;
 
 const Nameform = ({ dataStore }) => {
-  console.log(dataStore);
-
-  let CustomRedirect = data => {
-    console.log(data);
-    return <h4>Test</h4>;
-
-    //return <Redirect to="/Waiting" />;
-  };
-
+  if (dataStore.lobbyfound) {
+  }
   const createLobby = (user, params) => {
     let lobbyName = 'Game:' + Date.now();
     addPlayerToLobby(user, lobbyName);
     dataStore.gamelobbyname(lobbyName);
-    console.log(dataStore);
   };
 
   const addPlayerToLobby = (user, lobby) => {
-    db.ref('GamesLobby/' + lobby)
+    db.ref('AantalPlayer/playerAmount').transaction(function(currentData) {
+      return currentData + 1;
+    });
+
+    db.ref()
+      .child('GamesLobby/' + lobby)
       .child('players')
       .child(user.userId)
       .set(user);
 
     dataStore.gamelobbyname(lobby);
-    console.log(dataStore);
+    dataStore.lobbyfound = true;
+    dataStore.names(user);
+
+    //CustomRedirect();
   };
+
   const nameInput = React.createRef();
 
   let findGameLobby = (user, params) => {
@@ -94,6 +95,14 @@ const Nameform = ({ dataStore }) => {
     findGameLobby(user, user);
   };
 
+  let CustomRedirect = () => {
+    if (dataStore.lobbyfound) {
+      return <Redirect to="/Waiting" />;
+    } else {
+      return <div />;
+    }
+  };
+
   return (
     <>
       <div>
@@ -102,7 +111,7 @@ const Nameform = ({ dataStore }) => {
 
           <input type="submit" value="Play" />
         </form>
-        <CustomRedirect lobby={dataStore} />
+        <CustomRedirect />
       </div>
     </>
   );
