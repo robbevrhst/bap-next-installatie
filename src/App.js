@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Components/Home';
 import Nameform from './Components/Nameform';
 import Waiting from './Components/Waiting';
+import Matched from './Components/Matched';
 import Questions from './Components/Questions';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -21,6 +22,9 @@ class App extends Component {
 
         <Route path="/Waiting" exact>
           <Waiting></Waiting>
+        </Route>
+        <Route path="/Matched" exact>
+          <Matched></Matched>
         </Route>
         <Route path="/Questions" exact>
           <Questions></Questions>

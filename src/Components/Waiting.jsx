@@ -20,7 +20,7 @@ const Waiting = ({ dataStore, history }) => {
       }
 
       if (totalPlayers === true) {
-        history.push('/Questions');
+        history.push('/Matched');
       }
     });
   }
