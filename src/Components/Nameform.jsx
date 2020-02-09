@@ -89,7 +89,9 @@ const Nameform = ({ dataStore }) => {
     let userId = username + Date.now();
     let user = {
       username,
-      userId: userId
+      userId: userId,
+      currentquestion: 1,
+      points: 0
     };
 
     findGameLobby(user, user);

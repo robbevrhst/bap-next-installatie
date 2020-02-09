@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { inject, observer, PropTypes } from 'mobx-react';
 let newState = [];
 
@@ -50,7 +50,7 @@ class Database extends Component {
         <div className="container">
           <section className="add-item">
             <form onSubmit={this.handleSubmit}>
-              <Link>Start</Link>
+              <Link>Start</button>
             </form>
           </section>
           <section className="display-item">
