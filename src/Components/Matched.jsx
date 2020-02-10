@@ -6,6 +6,7 @@ import firebase from '../firebase.js';
 let db = firebase.database();
 
 const Matched = ({ dataStore, history }) => {
+  console.log(dataStore);
   const itemsRef = db.ref('GamesLobby/' + dataStore.gamelobby + '/players');
 
   itemsRef.on('value', snapshot => {

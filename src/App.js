@@ -9,6 +9,8 @@ import Ageslider from './Components/Ageslider';
 import Questions from './Components/Questions';
 import Waitingotherplayerdone from './Components/Waitingotherplayerdone';
 import Matchedevent from './Components/Matchedevent';
+import Final from './Components/Final';
+import Delete from './Components/Delete';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -42,6 +44,14 @@ class App extends Component {
 
         <Route path="/Matchedevent" exact>
           <Matchedevent></Matchedevent>
+        </Route>
+
+        <Route path="/Final" exact>
+          <Final></Final>
+        </Route>
+
+        <Route path="/Delete" exact>
+          <Delete></Delete>
         </Route>
       </Router>
     );

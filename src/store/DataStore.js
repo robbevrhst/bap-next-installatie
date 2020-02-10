@@ -2,13 +2,7 @@ import { decorate, observable, action } from 'mobx';
 
 class DataStore {
   gamelobby = '';
-  namesId = [
-    {
-      username: 'Rico',
-      userId: 'Rico1581198647823',
-      currentquestion: 1
-    }
-  ];
+  namesId = [];
   lobbyfound = false;
   otherPlayer = '';
   age = 50;
@@ -17,6 +11,7 @@ class DataStore {
   otherPlayerQuestion;
   volledigePunten;
   otherpid;
+  randomnumber;
 
   questions = [
     {
@@ -67,7 +62,6 @@ class DataStore {
   };
 
   names = data => {
-    this.namesId.clear();
     this.namesId.push(data);
   };
 
@@ -99,6 +93,24 @@ class DataStore {
   completeScore = data => {
     this.volledigePunten = data;
   };
+
+  loginnumber = data => {
+    this.randomnumber = data;
+  };
+
+  createZero = () => {
+    this.gamelobby = '';
+    this.namesId = [];
+    this.lobbyfound = false;
+    this.otherPlayer = '';
+    this.age = 50;
+    this.totalPoints = 0;
+    this.questionNumber = 0;
+    this.otherPlayerQuestion = 0;
+    this.volledigePunten = 0;
+    this.otherpid = '';
+    this.randomnumber = 0;
+  };
 }
 
 decorate(DataStore, {
@@ -116,6 +128,9 @@ decorate(DataStore, {
   otherPlayerQuestion: observable,
   otherpid: observable,
   volledigePunten: observable,
+  randomnumber: observable,
+  loginnumber: action,
+  createZero: action,
   questions: observable.ref
 });
 

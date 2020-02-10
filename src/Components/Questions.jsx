@@ -4,8 +4,10 @@ import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
 
 let db = firebase.database();
+let randomNumber = Math.floor(Math.random() * 90000) + 10000;
 
 const Questions = ({ dataStore, history }) => {
+  dataStore.loginnumber(randomNumber);
   let questionNumber = dataStore.questionNumber;
   let questionLink = dataStore.questions[questionNumber].question;
 

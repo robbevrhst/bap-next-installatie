@@ -4,7 +4,6 @@ import firebase from '../firebase.js';
 import { withRouter } from 'react-router-dom';
 let db = firebase.database();
 let name;
-let totalPlayers = false;
 
 //
 const Waiting = ({ dataStore, history }) => {
@@ -13,14 +12,13 @@ const Waiting = ({ dataStore, history }) => {
     const itemsRef = db.ref('AantalPlayer/playerAmount');
     itemsRef.on('value', snapshot => {
       let items = snapshot.val();
-      //totalPlayers = items;
 
       if (items === 2) {
-        totalPlayers = true;
-      }
-
-      if (totalPlayers === true) {
-        history.push('/Matched');
+        setTimeout(() => {
+          console.log('time done');
+          history.push('/Matched');
+        }, 1000);
+        // history.push('/Matched');
       }
     });
   }
