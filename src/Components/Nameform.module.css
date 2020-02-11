@@ -1,0 +1,94 @@
+@font-face {
+  font-family: alte haas bold;
+  src: url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff) format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: alte haas reg;
+  src: url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff)
+      format('woff');
+  font-weight: normal;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 21rem;
+  margin-left: 2rem;
+}
+
+.navcontainer {
+  margin-right: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.langlink {
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: alte haas reg;
+}
+
+.container {
+  height: 51rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  background-image: url('./assets/dotbg.png');
+  background-repeat: no-repeat;
+  background-position: 20rem;
+}
+
+.active {
+  font-family: alte haas bold;
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 0.3rem solid black;
+}
+
+.title {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-family: alte haas bold;
+  width: 50rem;
+  margin-bottom: 3rem;
+}
+
+.formcontainer {
+  display: flex;
+  align-items: center;
+}
+
+.textinput {
+  border: 1rem solid #ff4338;
+  width: 52rem;
+  height: 7rem;
+  outline: none;
+}
+
+.gobutton {
+  background-color: #ff4338;
+  color: white;
+  text-decoration: none;
+  border: none;
+  height: 7rem;
+  width: 12rem;
+  font-family: alte haas bold;
+  font-size: 4rem;
+  border-right: 1rem solid #ff4338;
+}

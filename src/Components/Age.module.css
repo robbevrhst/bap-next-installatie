@@ -1,0 +1,133 @@
+@font-face {
+  font-family: alte haas bold;
+  src: url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff) format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: alte haas reg;
+  src: url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff)
+      format('woff');
+  font-weight: normal;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 21rem;
+  margin-left: 2rem;
+}
+
+.navcontainer {
+  margin-right: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.langlink {
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: alte haas reg;
+}
+
+.active {
+  font-family: alte haas bold;
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 0.3rem solid black;
+}
+
+.contentcontainer {
+  height: 65rem;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-family: alte haas bold;
+  font-size: 7.2rem;
+  width: 40rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.formcontainer {
+  display: flex;
+
+  flex-flow: column;
+  align-items: center;
+  width: 50rem;
+}
+
+.age {
+  height: 40rem;
+  width: 40rem;
+  font-family: alte haas bold;
+  color: #ff4338;
+  font-size: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/dotcirclebg.png');
+  background-repeat: no-repeat;
+
+  background-position: center;
+  margin-left: 5rem;
+}
+
+.year {
+  font-size: 7rem;
+}
+
+.confirmbutton {
+  background-color: #ff4338;
+  border: none;
+  color: white;
+  letter-spacing: 0rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.slider {
+  margin: 5rem 0;
+  width: 40rem;
+  -webkit-appearance: none;
+}
+
+.slider:focus {
+  outline: none;
+}
+
+.slider:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+.slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1rem;
+  cursor: pointer;
+
+  background: #ff4338;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  height: 4rem;
+  width: 4rem;
+  border: 1rem solid #ff4338;
+  margin-top: -1.6rem;
+  border-radius: 99px;
+}

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: alte haas bold;
+  src: url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff) format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: alte haas reg;
+  src: url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff)
+      format('woff');
+  font-weight: normal;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 21rem;
+  margin-left: 2rem;
+}
+
+.navcontainer {
+  margin-right: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.langlink {
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: alte haas reg;
+}
+
+.active {
+  font-family: alte haas bold;
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 0.3rem solid black;
+}
+
+.question {
+  font-family: alte haas bold;
+  font-size: 7rem;
+  width: 66rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.contentcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.buttoncontainer {
+  margin-top: 17rem;
+  display: flex;
+  flex-flow: column;
+  height: 70%;
+  justify-content: space-between;
+}
+
+.questioncontainer {
+  margin-left: 4rem;
+}
+.img {
+  position: relative;
+  margin-right: 5rem;
+  margin-top: 3rem;
+}
+
+.buttons {
+  width: 40rem;
+  height: 5rem;
+  border: 0.5rem solid #ff4338;
+  background-color: white;
+  text-align: left;
+}
+
+.otherplayer {
+  text-align: right;
+  font-family: alte haas bold;
+  font-size: 1.6rem;
+}
