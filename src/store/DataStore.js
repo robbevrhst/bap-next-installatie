@@ -19,40 +19,58 @@ class DataStore {
       answers: {
         a: 'antwoord 1',
         b: 'antwoord 2',
-        c: 'antwoord 3'
+        c: 'antwoord 3',
+        d: 'antwoord 1',
+        e: 'antwoord 2',
+        f: 'antwoord 3'
       },
       points: {
         a: 1,
         b: 2,
-        c: 3
+        c: 3,
+        d: 1,
+        e: 2,
+        f: 3
       }
     },
 
     {
-      question: 'Waar wilt u zeker nog eens op reis gaan?',
+      question: 'Voor dit filmgenre val ik niet in slaap!',
       answers: {
-        a: 'antwoord 4',
-        b: 'antwoord 5',
-        c: 'antwoord 6'
+        a: 'antwoord 1',
+        b: 'antwoord 2',
+        c: 'antwoord 3',
+        d: 'antwoord 1',
+        e: 'antwoord 2',
+        f: 'antwoord 3'
       },
       points: {
-        a: 4,
-        b: 5,
-        c: 6
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 1,
+        e: 2,
+        f: 3
       }
     },
 
     {
-      question: 'test',
+      question: 'Doe mij maar een reisje naar ...',
       answers: {
-        a: 'test',
-        b: 'test',
-        c: 'test'
+        a: 'antwoord 1',
+        b: 'antwoord 2',
+        c: 'antwoord 3',
+        d: 'antwoord 1',
+        e: 'antwoord 2',
+        f: 'antwoord 3'
       },
       points: {
-        a: 2,
-        b: 3,
-        c: 4
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 1,
+        e: 2,
+        f: 3
       }
     }
   ];

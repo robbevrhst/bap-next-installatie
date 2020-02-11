@@ -2,6 +2,9 @@ import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
+import Questionsstyles from './Questions.module.css';
+import logo from './assets/next-logo.png';
+import questionpic from './assets/questionpic.png';
 
 let db = firebase.database();
 let randomNumber = Math.floor(Math.random() * 90000) + 10000;
@@ -72,24 +75,51 @@ const Questions = ({ dataStore, history }) => {
   return (
     <>
       <div>
-        <h1>{questionLink}</h1>
-        <h2>
-          {dataStore.otherPlayer} is momenteel op vraag{' '}
-          {dataStore.otherPlayerQuestion}
-        </h2>
+        <header className={Questionsstyles.header}>
+          <img className={Questionsstyles.logo} src={logo} alt="logo" />
+          <div className={Questionsstyles.navcontainer}>
+            <a className={Questionsstyles.active} href="/">
+              NL
+            </a>
+            <a className={Questionsstyles.langlink} href="/">
+              FR
+            </a>
+            <a className={Questionsstyles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <div className={Questionsstyles.contentcontainer}>
+          <div className={Questionsstyles.questioncontainer}>
+            <h1 className={Questionsstyles.question}>{questionLink}</h1>
 
-        {Object.entries(dataStore.questions[questionNumber].answers).map(
-          ([key, val]) => {
-            if (questionNumber < 3) {
-              return (
-                <button key={key} onClick={answerGiving} value={key}>
-                  {val}
-                </button>
-              );
-            }
-            //console.log(val); // the value of the current key.
-          }
-        )}
+            <div className={Questionsstyles.buttoncontainer}>
+              {Object.entries(dataStore.questions[questionNumber].answers).map(
+                ([key, val]) => {
+                  if (questionNumber < 3) {
+                    return (
+                      <button
+                        className={Questionsstyles.buttons}
+                        key={key}
+                        onClick={answerGiving}
+                        value={key}
+                      >
+                        {val}
+                      </button>
+                    );
+                  }
+                  //console.log(val); // the value of the current key.
+                }
+              )}
+            </div>
+            <h2 className={Questionsstyles.otherplayer}>
+              {dataStore.otherPlayer} is momenteel op vraag{' '}
+              {dataStore.otherPlayerQuestion}
+            </h2>
+          </div>
+
+          <img className={Questionsstyles.img} src={questionpic} alt="" />
+        </div>
       </div>
     </>
   );

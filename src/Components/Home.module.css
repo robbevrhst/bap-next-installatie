@@ -1,0 +1,78 @@
+@font-face {
+  font-family: alte haas bold;
+  src: url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff) format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: alte haas reg;
+  src: url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff)
+      format('woff');
+  font-weight: normal;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 21rem;
+  margin-left: 2rem;
+}
+
+.navcontainer {
+  margin-right: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.langlink {
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: alte haas reg;
+}
+
+.startbutton {
+  border: 1rem solid #ff4338;
+  background-color: white;
+  font-family: alte haas bold;
+  font-size: 5rem;
+  padding: 1rem 10rem;
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
+
+.active {
+  font-family: alte haas bold;
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 0.3rem solid black;
+}
+
+.formcontainer {
+  margin-top: 25vh;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 5rem;
+  margin: 0;
+  font-family: alte haas bold;
+  text-transform: uppercase;
+}

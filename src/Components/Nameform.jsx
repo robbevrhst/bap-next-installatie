@@ -2,6 +2,8 @@ import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 import { Redirect } from 'react-router-dom';
 import firebase from '../firebase.js';
+import Namestyles from './Nameform.module.css';
+import logo from './assets/next-logo.png';
 
 let db = firebase.database();
 const max_lobby_players = 2;
@@ -108,12 +110,34 @@ const Nameform = ({ dataStore }) => {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Username" ref={nameInput} />
+        <header className={Namestyles.header}>
+          <img className={Namestyles.logo} src={logo} alt="logo" />
+          <div className={Namestyles.navcontainer}>
+            <a className={Namestyles.active} href="/">
+              NL
+            </a>
+            <a className={Namestyles.langlink} href="/">
+              FR
+            </a>
+            <a className={Namestyles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <div className={Namestyles.container}>
+          <h1 className={Namestyles.title}>Wat is uw voornaam?</h1>
+          <form onSubmit={handleSubmit} className={Namestyles.formcontainer}>
+            <input
+              className={Namestyles.textinput}
+              type="text"
+              placeholder="Voornaam"
+              ref={nameInput}
+            />
 
-          <input type="submit" value="Play" />
-        </form>
-        <CustomRedirect />
+            <input className={Namestyles.gobutton} type="submit" value="GO" />
+          </form>
+          <CustomRedirect />
+        </div>
       </div>
     </>
   );

@@ -2,7 +2,8 @@ import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
-
+import Matchedeventstyles from './Matchedevent.module.css';
+import logo from './assets/next-logo.png';
 let db = firebase.database();
 
 const results = {
@@ -54,9 +55,12 @@ const Matchedevent = ({ dataStore, history }) => {
         name: dataStore.namesId[0].username
       });
     return (
-      <div>
-        <h1>{results.one.title}</h1>
-        <h2>{results.one.production}</h2> <p>{results.one.description}</p>
+      <div className={Matchedeventstyles.artistcontainer}>
+        <h2>{results.one.production}</h2>
+        <h1 className={Matchedeventstyles.production}>{results.one.title}</h1>
+        <p className={Matchedeventstyles.description}>
+          {results.one.description}
+        </p>
         <form onSubmit={handleSubmit3}>
           <input type="submit" value="Finish" />
         </form>
@@ -76,9 +80,12 @@ const Matchedevent = ({ dataStore, history }) => {
         name: dataStore.namesId[0].username
       });
     return (
-      <div>
-        <h1>{results.two.title}</h1>
-        <h2>{results.two.production}</h2> <p>{results.two.description}</p>
+      <div className={Matchedeventstyles.artistcontainer}>
+        <h2>{results.two.production}</h2>
+        <h1 className={Matchedeventstyles.production}>{results.two.title}</h1>
+        <p className={Matchedeventstyles.description}>
+          {results.two.description}
+        </p>
         <form onSubmit={handleSubmit3}>
           <input type="submit" value="Finish" />
         </form>
@@ -98,9 +105,12 @@ const Matchedevent = ({ dataStore, history }) => {
         name: dataStore.namesId[0].username
       });
     return (
-      <div>
-        <h1>{results.three.title}</h1>
-        <h2>{results.three.production}</h2> <p>{results.three.description}</p>
+      <div className={Matchedeventstyles.artistcontainer}>
+        <h2>{results.three.production}</h2>
+        <h1 className={Matchedeventstyles.production}>{results.three.title}</h1>
+        <p className={Matchedeventstyles.description}>
+          {results.three.description}
+        </p>
         <form onSubmit={handleSubmit3}>
           <input type="submit" value="Finish" />
         </form>
@@ -111,8 +121,25 @@ const Matchedevent = ({ dataStore, history }) => {
   return (
     <>
       <div>
-        <h1>Matched Event is tadaa</h1>
-        for
+        <header className={Matchedeventstyles.header}>
+          <img className={Matchedeventstyles.logo} src={logo} alt="logo" />
+          <div className={Matchedeventstyles.navcontainer}>
+            <a className={Matchedeventstyles.active} href="/">
+              NL
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              FR
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <div>
+          <form onSubmit={handleSubmit3}>
+            <input type="submit" value="Finish" />
+          </form>
+        </div>
       </div>
     </>
   );
