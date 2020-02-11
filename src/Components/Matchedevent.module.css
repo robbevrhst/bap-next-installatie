@@ -51,24 +51,43 @@
 
 .title {
   font-family: alte haas bold;
+  height: 51.1rem;
   font-size: 4.8rem;
   width: 55rem;
+  padding-left: 5rem;
+  margin-top: 3rem;
+  padding-top: 5rem;
+  z-index: -1;
+  position: absolute;
+  background-image: url('./assets/dotcirclegreybg2.png');
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
 .artistcontainer {
+  background-color: white;
   border: 1rem solid #ff4338;
-  width: 73rem;
+  width: 65rem;
+  padding: 2rem;
+  position: absolute;
+  z-index: -1;
+  margin: 0;
+  top: 50%;
+  left: 15%;
 }
 
 .artist {
   color: #ff4338;
   font-family: alte haas bold;
   font-size: 4.8rem;
+  margin-top: 0.6rem;
+  margin-bottom: 2rem;
 }
 
 .production {
   font-family: alte haas reg;
   font-size: 3.6rem;
+  text-transform: capitalize;
 }
 
 .description {
@@ -76,4 +95,24 @@
   font-size: 1.8rem;
   font-weight: lighter;
   line-height: 2.2rem;
+}
+
+.finish {
+  width: 15rem;
+  height: 15rem;
+  background-color: #ff4338;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: helvetica;
+  white-space: normal;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.eventimg {
+  margin-left: 50rem;
 }

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
 import Matchedeventstyles from './Matchedevent.module.css';
 import logo from './assets/next-logo.png';
+import eventimg from './assets/eventimg.png';
 let db = firebase.database();
 
 const results = {
@@ -55,71 +56,6 @@ const Matchedevent = ({ dataStore, history }) => {
         name: dataStore.namesId[0].username
       });
     return (
-      <div className={Matchedeventstyles.artistcontainer}>
-        <h2>{results.one.production}</h2>
-        <h1 className={Matchedeventstyles.production}>{results.one.title}</h1>
-        <p className={Matchedeventstyles.description}>
-          {results.one.description}
-        </p>
-        <form onSubmit={handleSubmit3}>
-          <input type="submit" value="Finish" />
-        </form>
-      </div>
-    );
-  } else if (
-    dataStore.volledigePunten >= 11 &&
-    dataStore.volledigePunten <= 20
-  ) {
-    db.ref()
-      .child(dataStore.randomnumber)
-      .set({
-        title: 'CIE XY & RACHID OURAMDANE',
-        production: 'MÖBIUS',
-        description:
-          'Wat gebeurt er als je een groep wervelende acrobaten met een onverschrokken choreograaf met elkaar in contact brengt? Het Franse gezelschap Cie XY werd in 2005 opgericht door het duo Abdel Senhadji en Mahmoud Louertani. Cie XY staat voor spectaculaire en virtuoze acrobatie en combineert poëzie en luchtigheid, zoals de succesvoorstellingen Le Grand C en Il n’est pas encore minuit bij uitstek lieten zien. Inmiddels wordt het gezelschap in binnen- en buitenland op staande ovaties getrakteerd.',
-        name: dataStore.namesId[0].username
-      });
-    return (
-      <div className={Matchedeventstyles.artistcontainer}>
-        <h2>{results.two.production}</h2>
-        <h1 className={Matchedeventstyles.production}>{results.two.title}</h1>
-        <p className={Matchedeventstyles.description}>
-          {results.two.description}
-        </p>
-        <form onSubmit={handleSubmit3}>
-          <input type="submit" value="Finish" />
-        </form>
-      </div>
-    );
-  } else if (
-    dataStore.volledigePunten >= 21 &&
-    dataStore.volledigePunten <= 30
-  ) {
-    db.ref()
-      .child(dataStore.randomnumber)
-      .set({
-        title: 'CIE STILL LIFE',
-        production: 'NO ONE',
-        description:
-          'In deze chaotische situatie stelt No One scherp op de eeuwenoude en actuele spanning tussen het individu en de groep. Waar komt dat bezeten en barbaarse gedrag van de massa vandaan? En iemand lynchen: is dat geen dagelijkse kost in de politiek, de media of op het internet? Met veel humor toont Still Life hoe verantwoordelijkheidszin verslapt, hoe vlot een zondebok wordt aangewezen en hoeveel macht er van een groep kan uitgaan. Met beelden zonder woorden beschrijft deze voorstelling broze, kwetsbare wezens in een vijandelijke wereld waar alles ‘fantastisch verkeerd’ loopt.',
-        name: dataStore.namesId[0].username
-      });
-    return (
-      <div className={Matchedeventstyles.artistcontainer}>
-        <h2>{results.three.production}</h2>
-        <h1 className={Matchedeventstyles.production}>{results.three.title}</h1>
-        <p className={Matchedeventstyles.description}>
-          {results.three.description}
-        </p>
-        <form onSubmit={handleSubmit3}>
-          <input type="submit" value="Finish" />
-        </form>
-      </div>
-    );
-  }
-
-  return (
-    <>
       <div>
         <header className={Matchedeventstyles.header}>
           <img className={Matchedeventstyles.logo} src={logo} alt="logo" />
@@ -136,11 +72,146 @@ const Matchedevent = ({ dataStore, history }) => {
           </div>
         </header>
         <div>
+          <h1 className={Matchedeventstyles.title}>
+            jullie hebben een match! bekijk jullie matchend event!
+          </h1>
+          <div className={Matchedeventstyles.artistcontainer}>
+            <h3 className={Matchedeventstyles.production}>
+              {results.one.production}
+            </h3>
+            <h2 className={Matchedeventstyles.artist}>{results.one.title}</h2>
+
+            <p className={Matchedeventstyles.description}>
+              {results.one.description}
+            </p>
+          </div>
           <form onSubmit={handleSubmit3}>
-            <input type="submit" value="Finish" />
+            <input
+              className={Matchedeventstyles.finish}
+              type="submit"
+              value="ticket afdrukken en beëindigen"
+            />
           </form>
         </div>
+
+        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
       </div>
+    );
+  } else if (
+    dataStore.volledigePunten >= 11 &&
+    dataStore.volledigePunten <= 20
+  ) {
+    db.ref()
+      .child(dataStore.randomnumber)
+      .set({
+        title: 'CIE XY & RACHID OURAMDANE',
+        production: 'MÖBIUS',
+        description:
+          'Wat gebeurt er als je een groep wervelende acrobaten met een onverschrokken choreograaf met elkaar in contact brengt? Het Franse gezelschap Cie XY werd in 2005 opgericht door het duo Abdel Senhadji en Mahmoud Louertani. Cie XY staat voor spectaculaire en virtuoze acrobatie en combineert poëzie en luchtigheid, zoals de succesvoorstellingen Le Grand C en Il n’est pas encore minuit bij uitstek lieten zien. Inmiddels wordt het gezelschap in binnen- en buitenland op staande ovaties getrakteerd.',
+        name: dataStore.namesId[0].username
+      });
+    return (
+      <div>
+        <header className={Matchedeventstyles.header}>
+          <img className={Matchedeventstyles.logo} src={logo} alt="logo" />
+          <div className={Matchedeventstyles.navcontainer}>
+            <a className={Matchedeventstyles.active} href="/">
+              NL
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              FR
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <div>
+          <h1 className={Matchedeventstyles.title}>
+            jullie hebben een match! bekijk jullie matchend event!
+          </h1>
+          <div className={Matchedeventstyles.artistcontainer}>
+            <h3 className={Matchedeventstyles.production}>
+              {results.two.production}
+            </h3>
+            <h2 className={Matchedeventstyles.artist}>{results.two.title}</h2>
+
+            <p className={Matchedeventstyles.description}>
+              {results.two.description}
+            </p>
+          </div>
+          <form onSubmit={handleSubmit3}>
+            <input
+              className={Matchedeventstyles.finish}
+              type="submit"
+              value="ticket afdrukken en beëindigen"
+            />
+          </form>
+        </div>
+
+        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+      </div>
+    );
+  } else if (
+    dataStore.volledigePunten >= 21 &&
+    dataStore.volledigePunten <= 30
+  ) {
+    db.ref()
+      .child(dataStore.randomnumber)
+      .set({
+        title: 'CIE STILL LIFE',
+        production: 'NO ONE',
+        description:
+          'In deze chaotische situatie stelt No One scherp op de eeuwenoude en actuele spanning tussen het individu en de groep. Waar komt dat bezeten en barbaarse gedrag van de massa vandaan? En iemand lynchen: is dat geen dagelijkse kost in de politiek, de media of op het internet? Met veel humor toont Still Life hoe verantwoordelijkheidszin verslapt, hoe vlot een zondebok wordt aangewezen en hoeveel macht er van een groep kan uitgaan. Met beelden zonder woorden beschrijft deze voorstelling broze, kwetsbare wezens in een vijandelijke wereld waar alles ‘fantastisch verkeerd’ loopt.',
+        name: dataStore.namesId[0].username
+      });
+    return (
+      <div>
+        <header className={Matchedeventstyles.header}>
+          <img className={Matchedeventstyles.logo} src={logo} alt="logo" />
+          <div className={Matchedeventstyles.navcontainer}>
+            <a className={Matchedeventstyles.active} href="/">
+              NL
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              FR
+            </a>
+            <a className={Matchedeventstyles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <div>
+          <h1 className={Matchedeventstyles.title}>
+            jullie hebben een match! bekijk jullie matchend event!
+          </h1>
+          <div className={Matchedeventstyles.artistcontainer}>
+            <h3 className={Matchedeventstyles.production}>
+              {results.three.production}
+            </h3>
+            <h2 className={Matchedeventstyles.artist}>{results.three.title}</h2>
+
+            <p className={Matchedeventstyles.description}>
+              {results.three.description}
+            </p>
+          </div>
+          <form onSubmit={handleSubmit3}>
+            <input
+              className={Matchedeventstyles.finish}
+              type="submit"
+              value="ticket afdrukken en beëindigen"
+            />
+          </form>
+        </div>
+
+        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div></div>
     </>
   );
 };
