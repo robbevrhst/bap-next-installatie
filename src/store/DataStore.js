@@ -12,6 +12,7 @@ class DataStore {
   volledigePunten;
   otherpid;
   randomnumber;
+  bus = false;
 
   questions = [
     {
@@ -129,6 +130,10 @@ class DataStore {
     this.otherpid = '';
     this.randomnumber = 0;
   };
+
+  changeBus = () => {
+    this.bus = !(this.bus !== false);
+  };
 }
 
 decorate(DataStore, {
@@ -147,6 +152,7 @@ decorate(DataStore, {
   otherpid: observable,
   volledigePunten: observable,
   randomnumber: observable,
+  bus: observable,
   loginnumber: action,
   createZero: action,
   questions: observable.ref
