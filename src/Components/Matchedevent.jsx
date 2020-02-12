@@ -4,9 +4,12 @@ import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
 import Matchedeventstyles from './Matchedevent.module.css';
 import logo from './assets/next-logo.png';
-import eventimg from './assets/eventimg.png';
+
+import eventimg2 from './assets/eventimg2.png';
+import eventimg3 from './assets/eventimg3.png';
 import busicon from './assets/busicon.svg';
 import bustrack from './assets/busline.svg';
+import crisblanco from './assets/crisblanco.png';
 let db = firebase.database();
 
 const results = {
@@ -28,7 +31,7 @@ const results = {
     title: 'CIE XY & RACHID OURAMDANE',
     production: 'MÖBIUS',
     description:
-      'Wat gebeurt er als je een groep wervelende acrobaten met een onverschrokken choreograaf met elkaar in contact brengt? Het Franse gezelschap Cie XY werd in 2005 opgericht door het duo Abdel Senhadji en Mahmoud Louertani. Cie XY staat voor spectaculaire en virtuoze acrobatie en combineert poëzie en luchtigheid, zoals de succesvoorstellingen Le Grand C en Il n’est pas encore minuit bij uitstek lieten zien. Inmiddels wordt het gezelschap in binnen- en buitenland op staande ovaties getrakteerd.',
+      'Wat gebeurt er als je een groep wervelende acrobaten met een onverschrokken choreograaf met elkaar in contact brengt? Het Franse gezelschap Cie XY werd in 2005 opgericht door het duo Abdel Senhadji en Mahmoud Louertani.',
     date: 'Do. 20/11',
     bustimeleave1: '14:00',
     bustimearrive1: '17:30',
@@ -41,12 +44,14 @@ const results = {
     title: 'CIE STILL LIFE',
     production: 'NO ONE',
     description:
-      'In deze chaotische situatie stelt No One scherp op de eeuwenoude en actuele spanning tussen het individu en de groep. Waar komt dat bezeten en barbaarse gedrag van de massa vandaan? En iemand lynchen: is dat geen dagelijkse kost in de politiek, de media of op het internet? Met veel humor toont Still Life hoe verantwoordelijkheidszin verslapt, hoe vlot een zondebok wordt aangewezen en hoeveel macht er van een groep kan uitgaan. Met beelden zonder woorden beschrijft deze voorstelling broze, kwetsbare wezens in een vijandelijke wereld waar alles ‘fantastisch verkeerd’ loopt.',
+      'In deze chaotische situatie stelt No One scherp op de eeuwenoude en actuele spanning tussen het individu en de groep. Waar komt dat bezeten en barbaarse gedrag van de massa vandaan? ',
     date: 'Do. 20/11',
     bustimeleave1: '15:00',
     bustimearrive1: '17:30',
     bustimeleave2: '19:30',
-    bustimearrive2: '21:00'
+    bustimearrive2: '21:00',
+    vertrek: 'Budascoop',
+    aankomst: 'Le Phenix'
   }
 };
 
@@ -87,7 +92,11 @@ const Matchedevent = ({ dataStore, history }) => {
         bustimearrive1: '17:30',
         bustimeleave2: '19:30',
         bustimearrive2: '21:00',
-        opponent: dataStore.otherPlayer
+        img: 'eventimg1',
+        opponent: dataStore.otherPlayer,
+
+        vertrek: 'Budascoop',
+        aankomst: 'Le Phenix'
       });
 
     console.log(dataStore.bus);
@@ -140,7 +149,7 @@ const Matchedevent = ({ dataStore, history }) => {
                       Next organiseerd een gratis bus naar
                     </h3>
                     <h2 className={Matchedeventstyles.artisttitle}>
-                      Cris Blanco
+                      {results.one.title}
                     </h2>
                   </div>
                 </div>
@@ -224,7 +233,7 @@ const Matchedevent = ({ dataStore, history }) => {
           </form>
         </div>
 
-        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+        <img className={Matchedeventstyles.eventimg} src={crisblanco} alt="" />
       </div>
     );
   } else if (
@@ -244,7 +253,10 @@ const Matchedevent = ({ dataStore, history }) => {
         bustimearrive1: '17:30',
         bustimeleave2: '19:30',
         bustimearrive2: '21:00',
-        opponent: dataStore.otherPlayer
+        img: 'eventimg2',
+        opponent: dataStore.otherPlayer,
+        vertrek: 'Budascoop',
+        aankomst: 'Le Phenix'
       });
     return (
       <div>
@@ -295,7 +307,7 @@ const Matchedevent = ({ dataStore, history }) => {
                       Next organiseerd een gratis bus naar
                     </h3>
                     <h2 className={Matchedeventstyles.artisttitle}>
-                      Cris Blanco
+                      {results.two.title}
                     </h2>
                   </div>
                 </div>
@@ -379,7 +391,7 @@ const Matchedevent = ({ dataStore, history }) => {
           </form>
         </div>
 
-        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+        <img className={Matchedeventstyles.eventimg} src={eventimg2} alt="" />
       </div>
     );
   } else if (
@@ -399,7 +411,10 @@ const Matchedevent = ({ dataStore, history }) => {
         bustimearrive1: '17:30',
         bustimeleave2: '19:30',
         bustimearrive2: '21:00',
-        opponent: dataStore.otherPlayer
+        img: 'eventimg3',
+        opponent: dataStore.otherPlayer,
+        vertrek: 'Budascoop',
+        aankomst: 'Le Phenix'
       });
     return (
       <div>
@@ -450,7 +465,7 @@ const Matchedevent = ({ dataStore, history }) => {
                       Next organiseerd een gratis bus naar
                     </h3>
                     <h2 className={Matchedeventstyles.artisttitle}>
-                      Cris Blanco
+                      {results.three.title}
                     </h2>
                   </div>
                 </div>
@@ -534,7 +549,7 @@ const Matchedevent = ({ dataStore, history }) => {
           </form>
         </div>
 
-        <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+        <img className={Matchedeventstyles.eventimg} src={eventimg3} alt="" />
       </div>
     );
   }
@@ -670,7 +685,7 @@ const Matchedevent = ({ dataStore, history }) => {
         </form>
       </div>
 
-      <img className={Matchedeventstyles.eventimg} src={eventimg} alt="" />
+      <img className={Matchedeventstyles.eventimg} src={crisblanco} alt="" />
     </div>
   );
 };
