@@ -9,7 +9,14 @@ import questionpic from './assets/questionpic.png';
 let db = firebase.database();
 let randomNumber = Math.floor(Math.random() * 90000) + 10000;
 
+let imgpath = {
+  '1': ''
+};
+
 const Questions = ({ dataStore, history }) => {
+  let img = [];
+
+  console.log(imgpath);
   dataStore.loginnumber(randomNumber);
   let questionNumber = dataStore.questionNumber;
   let questionLink = dataStore.questions[questionNumber].question;
@@ -72,6 +79,20 @@ const Questions = ({ dataStore, history }) => {
     });
   };
 
+  if (questionNumber === 0) {
+    console.log('ik ga in de image');
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  } else if (questionNumber === 1) {
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  } else if (questionNumber === 2) {
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  }
+
+  console.log(img[0]);
+
   return (
     <>
       <div>
@@ -120,7 +141,7 @@ const Questions = ({ dataStore, history }) => {
             </h2>
           </div>
 
-          <img className={Questionsstyles.img} src={questionpic} alt="" />
+          <img className={Questionsstyles.img} src={img[0]} alt="" />
         </div>
       </div>
     </>
