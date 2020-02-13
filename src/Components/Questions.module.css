@@ -81,13 +81,20 @@
 .buttons {
   width: 40rem;
   height: 5rem;
-  border: 0.5rem solid #ff4338;
+  border: 0.3rem solid #ff4338;
   background-color: white;
   text-align: left;
+  font-size: alte haas bold;
+  color: #ff4338;
+  text-transform: capitalize;
+  font-size: 1.8rem;
 }
 
 .otherplayer {
   text-align: right;
   font-family: alte haas bold;
   font-size: 1.6rem;
+  position: absolute;
+  margin-top: 2rem;
+  margin-left: 10rem;
 }

@@ -9,7 +9,14 @@ import questionpic from './assets/questionpic.png';
 let db = firebase.database();
 let randomNumber = Math.floor(Math.random() * 90000) + 10000;
 
+let imgpath = {
+  '1': ''
+};
+
 const Questions = ({ dataStore, history }) => {
+  let img = [];
+
+  console.log(imgpath);
   dataStore.loginnumber(randomNumber);
   let questionNumber = dataStore.questionNumber;
   let questionLink = dataStore.questions[questionNumber].question;
@@ -40,7 +47,7 @@ const Questions = ({ dataStore, history }) => {
     dataStore.addQuestion();
 
     console.log(questionNumber);
-    if (questionNumber === 2) {
+    if (questionNumber === 4) {
       db.ref(
         'GamesLobby/' +
           dataStore.gamelobby +
@@ -52,7 +59,7 @@ const Questions = ({ dataStore, history }) => {
         return (currentData = currentData + dataStore.totalPoints);
       });
 
-      if (dataStore.otherPlayerQuestion === 4) {
+      if (dataStore.otherPlayerQuestion === 5) {
         history.push('/Matchedevent');
       } else {
         console.log('alle vragen zijn gemaakt');
@@ -71,6 +78,20 @@ const Questions = ({ dataStore, history }) => {
       return currentData + 1;
     });
   };
+
+  if (questionNumber === 0) {
+    console.log('ik ga in de image');
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  } else if (questionNumber === 1) {
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  } else if (questionNumber === 2) {
+    img = [];
+    img.push('/static/media/questionpic.4a9ef7f2.png');
+  }
+
+  console.log(img[0]);
 
   return (
     <>
@@ -96,7 +117,7 @@ const Questions = ({ dataStore, history }) => {
             <div className={Questionsstyles.buttoncontainer}>
               {Object.entries(dataStore.questions[questionNumber].answers).map(
                 ([key, val]) => {
-                  if (questionNumber < 3) {
+                  if (questionNumber < 5) {
                     return (
                       <button
                         className={Questionsstyles.buttons}
@@ -120,7 +141,7 @@ const Questions = ({ dataStore, history }) => {
             </h2>
           </div>
 
-          <img className={Questionsstyles.img} src={questionpic} alt="" />
+          <img className={Questionsstyles.img} src={img[0]} alt="" />
         </div>
       </div>
     </>

@@ -79,6 +79,10 @@
   width: 52rem;
   height: 7rem;
   outline: none;
+  font-family: alte haas reg;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .gobutton {

@@ -78,7 +78,7 @@ const Matchedevent = ({ dataStore, history }) => {
     dataStore.completeScore(allePunten);
   });
 
-  if (dataStore.volledigePunten <= 10) {
+  if (dataStore.volledigePunten <= 22) {
     db.ref()
       .child(dataStore.randomnumber)
       .set({
@@ -237,8 +237,8 @@ const Matchedevent = ({ dataStore, history }) => {
       </div>
     );
   } else if (
-    dataStore.volledigePunten >= 11 &&
-    dataStore.volledigePunten <= 20
+    dataStore.volledigePunten >= 23 &&
+    dataStore.volledigePunten <= 26
   ) {
     db.ref()
       .child(dataStore.randomnumber)
@@ -395,8 +395,8 @@ const Matchedevent = ({ dataStore, history }) => {
       </div>
     );
   } else if (
-    dataStore.volledigePunten >= 21 &&
-    dataStore.volledigePunten <= 30
+    dataStore.volledigePunten >= 27 &&
+    dataStore.volledigePunten <= 35
   ) {
     db.ref()
       .child(dataStore.randomnumber)

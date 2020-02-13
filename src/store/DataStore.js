@@ -18,11 +18,11 @@ class DataStore {
     {
       question: 'Wat staat er zeker nog op je bucketlist',
       answers: {
-        a: 'antwoord 1',
-        b: 'antwoord 2',
-        c: 'antwoord 3',
-        d: 'antwoord 1',
-        e: 'antwoord 2',
+        a: 'Bungeejumpen',
+        b: 'Een wereldreis maken',
+        c: 'Je eigen boek schrijven',
+        d: 'Het Noorderlicht bewonderen',
+        e: 'Je eigen bedrijf oprichten',
         f: 'antwoord 3'
       },
       points: {
@@ -38,12 +38,12 @@ class DataStore {
     {
       question: 'Voor dit filmgenre val ik niet in slaap!',
       answers: {
-        a: 'antwoord 1',
-        b: 'antwoord 2',
-        c: 'antwoord 3',
-        d: 'antwoord 1',
-        e: 'antwoord 2',
-        f: 'antwoord 3'
+        a: 'Actie',
+        b: 'Komedie',
+        c: 'Horror',
+        d: 'Sciencefiction',
+        e: 'Documentaires',
+        f: 'Avontuur'
       },
       points: {
         a: 1,
@@ -58,12 +58,50 @@ class DataStore {
     {
       question: 'Doe mij maar een reisje naar ...',
       answers: {
-        a: 'antwoord 1',
-        b: 'antwoord 2',
-        c: 'antwoord 3',
-        d: 'antwoord 1',
-        e: 'antwoord 2',
-        f: 'antwoord 3'
+        a: 'New York',
+        b: 'De Ardennen',
+        c: 'Het Hoge Noorden',
+        d: 'Japan',
+        e: 'De Zee',
+        f: 'Italië'
+      },
+      points: {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 1,
+        e: 2,
+        f: 3
+      }
+    },
+    {
+      question: 'Zaterderdagen zijn voor...',
+      answers: {
+        a: 'genieten in de zetel',
+        b: 'de discotheek onveilig te maken',
+        c: 'een gezellig onderonsje met vrienden',
+        d: 'Shoppen',
+        e: 'Lekker gaan uit eten',
+        f: 'een tentoonstelling bezoeken'
+      },
+      points: {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 1,
+        e: 2,
+        f: 3
+      }
+    },
+    {
+      question: 'Als kind wilde ik graag ... worden!',
+      answers: {
+        a: 'Astronaut',
+        b: 'Architect',
+        c: 'Politieagent',
+        d: 'Kok',
+        e: 'Juf/Meester',
+        f: 'Topsporter'
       },
       points: {
         a: 1,
@@ -96,7 +134,7 @@ class DataStore {
     this.totalPoints = this.totalPoints + data;
   };
   addQuestion = () => {
-    if (this.questionNumber < 2) {
+    if (this.questionNumber < 4) {
       this.questionNumber = this.questionNumber + 1;
     }
   };
