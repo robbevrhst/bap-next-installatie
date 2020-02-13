@@ -110,10 +110,6 @@
   outline: none;
 }
 
-.slider:focus::-webkit-slider-runnable-track {
-  background: #367ebd;
-}
-
 .slider::-webkit-slider-runnable-track {
   width: 100%;
   height: 1rem;

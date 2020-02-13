@@ -40,7 +40,7 @@ const Questions = ({ dataStore, history }) => {
     dataStore.addQuestion();
 
     console.log(questionNumber);
-    if (questionNumber === 2) {
+    if (questionNumber === 4) {
       db.ref(
         'GamesLobby/' +
           dataStore.gamelobby +
@@ -52,7 +52,7 @@ const Questions = ({ dataStore, history }) => {
         return (currentData = currentData + dataStore.totalPoints);
       });
 
-      if (dataStore.otherPlayerQuestion === 4) {
+      if (dataStore.otherPlayerQuestion === 5) {
         history.push('/Matchedevent');
       } else {
         console.log('alle vragen zijn gemaakt');
@@ -96,7 +96,7 @@ const Questions = ({ dataStore, history }) => {
             <div className={Questionsstyles.buttoncontainer}>
               {Object.entries(dataStore.questions[questionNumber].answers).map(
                 ([key, val]) => {
-                  if (questionNumber < 3) {
+                  if (questionNumber < 5) {
                     return (
                       <button
                         className={Questionsstyles.buttons}

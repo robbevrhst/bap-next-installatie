@@ -8,7 +8,7 @@ import logo from './assets/next-logo.png';
 //let db = firebase.database();
 
 const Waitingotherplayerdone = ({ dataStore, history }) => {
-  if (dataStore.otherPlayerQuestion === 4) {
+  if (dataStore.otherPlayerQuestion === 6) {
     history.push('/Matchedevent');
   }
   return (
