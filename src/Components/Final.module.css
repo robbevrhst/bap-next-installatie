@@ -1,0 +1,176 @@
+@font-face {
+  font-family: alte haas bold;
+  src: url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaas/altehaasgroteskbold-webfont.woff) format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: alte haas reg;
+  src: url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff2)
+      format('woff2'),
+    url(./assets/fonts/altehaasreg/altehaasgroteskregular-webfont.woff)
+      format('woff');
+  font-weight: normal;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 21rem;
+  margin-left: 2rem;
+}
+
+.navcontainer {
+  margin-right: 3rem;
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.langlink {
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  font-family: alte haas reg;
+}
+
+.active {
+  font-family: alte haas bold;
+  color: black;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border-bottom: 0.3rem solid black;
+}
+
+.numberone {
+  font-family: alte haas bold;
+  color: #ff4338;
+  font-size: 12rem;
+}
+
+.numbertext {
+  font-family: alte haas reg;
+  font-size: 1.6rem;
+  width: 16rem;
+  border-top: 0.8rem solid #ff4338;
+  padding-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1.2rem;
+  background-color: white;
+}
+
+.opsomming {
+  margin-top: 5rem;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  width: 70rem;
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  width: 70rem;
+  margin-top: 5rem;
+}
+
+.number1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url('./assets/greydots1.png');
+  background-repeat: no-repeat;
+}
+
+.number2 {
+  display: flex;
+  align-items: flex-end;
+  background-image: url('./assets/greydots1.png');
+  background-repeat: no-repeat;
+}
+
+.number3 {
+  display: flex;
+  align-items: flex-end;
+  background-image: url('./assets/greydots1.png');
+  background-repeat: no-repeat;
+}
+
+.number4 {
+  display: flex;
+  align-items: flex-end;
+  background-image: url('./assets/greydots1.png');
+  background-repeat: no-repeat;
+  border-bottom: 0.8rem solid #ff4338;
+}
+
+.numbertext1 {
+  font-family: alte haas reg;
+  font-size: 1.6rem;
+  width: 16rem;
+  background-color: white;
+  margin-left: 2rem;
+}
+
+.numbertext2 {
+  font-family: alte haas reg;
+  font-size: 1.6rem;
+  width: 16rem;
+  border-left: 0.8rem solid #ff4338;
+  padding-left: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1.4rem;
+  background-color: white;
+}
+
+.numberthree {
+  font-family: alte haas bold;
+  color: #ff4338;
+  font-size: 12rem;
+  border-bottom: 0.8rem solid #ff4338;
+}
+
+.numbertext4 {
+  font-family: alte haas reg;
+  font-size: 1.6rem;
+  width: 16rem;
+  background-color: white;
+  margin-left: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.img {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.yourcode {
+  font-family: alte haas bold;
+  font-size: 3.6rem;
+}
+
+.code {
+  color: #ff4338;
+  font-family: alte haas bold;
+  font-size: 6rem;
+  margin-top: 2rem;
+}

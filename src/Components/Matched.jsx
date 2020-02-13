@@ -2,6 +2,8 @@ import React from 'react';
 import { inject, observer, PropTypes } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
+import styles from './Matched.module.css';
+import logo from './assets/next-logo.png';
 
 let db = firebase.database();
 
@@ -31,9 +33,26 @@ const Matched = ({ dataStore, history }) => {
   return (
     <>
       <div>
-        <h1>
-          {dataStore.namesId[0].username}, je ben gematched met{' '}
-          {dataStore.otherPlayer}
+        <header className={styles.header}>
+          <img className={styles.logo} src={logo} alt="logo" />
+          <div className={styles.navcontainer}>
+            <a className={styles.active} href="/">
+              NL
+            </a>
+            <a className={styles.langlink} href="/">
+              FR
+            </a>
+            <a className={styles.langlink} href="/">
+              EN
+            </a>
+          </div>
+        </header>
+        <h1 className={styles.title}>
+          Hallo{' '}
+          <span className={styles.red}>{dataStore.namesId[0].username}</span>,
+          je nextperience met{' '}
+          <span className={styles.red}>{dataStore.otherPlayer}</span> begint
+          hier
         </h1>
       </div>
     </>
