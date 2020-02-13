@@ -107,6 +107,8 @@ const Questions = ({ dataStore, history }) => {
                         {val}
                       </button>
                     );
+                  } else {
+                    return <></>;
                   }
                   //console.log(val); // the value of the current key.
                 }
