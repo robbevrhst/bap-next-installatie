@@ -46,7 +46,7 @@ const Home = ({ dataStore, history }) => {
             </form>
           </div>
           <span className={HomeStyles.of}>of</span>
-          <a className={HomeStyles.alone} href="">
+          <a className={HomeStyles.alone} href="/">
             ontdek alleen
           </a>
         </div>
