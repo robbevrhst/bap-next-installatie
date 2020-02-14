@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
 import Questionsstyles from './Questions.module.css';
 import logo from './assets/next-logo.png';
-//import questionpic from './assets/job.png';
+//import questionpic from './assets/questionpic4.png';
 
 let db = firebase.database();
 let randomNumber = Math.floor(Math.random() * 90000) + 10000;
@@ -82,21 +82,22 @@ const Questions = ({ dataStore, history }) => {
   if (questionNumber === 0) {
     console.log('ik ga in de image');
     img = [];
-    img.push('/static/media/bucketlist.3c170e44.png');
+    img.push('/static/media/questionpic.573fb89b.png');
   } else if (questionNumber === 1) {
     img = [];
-    img.push('/static/media/cinema.e051ef00.png');
+    img.push('/static/media/questionpic1.90aa7212.png');
   } else if (questionNumber === 2) {
     img = [];
-    img.push('/static/media/travel.92f2120e.png');
+    img.push('/static/media/questionpic2.92f2120e.png');
   } else if (questionNumber === 3) {
     img = [];
-    img.push('/static/media/saturday.73093b4c.png');
+    img.push('/static/media/questionpic3.e051ef00.png');
   } else if (questionNumber === 4) {
     img = [];
-    img.push('/static/media/job.90aa7212.png');
+    img.push('/static/media/questionpic4.3c170e44.png');
   } else if (questionNumber === 5) {
     img = [];
+    img.push('/static/media/questionpic4.3c170e44.png');
   }
 
   console.log(img[0]);
