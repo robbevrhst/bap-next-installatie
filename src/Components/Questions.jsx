@@ -4,7 +4,11 @@ import { withRouter } from 'react-router-dom';
 import firebase from '../firebase.js';
 import Questionsstyles from './Questions.module.css';
 import logo from './assets/next-logo.png';
-//import questionpic from './assets/questionpic4.png';
+import questionpic from './assets/questionpic.png';
+import questionpic1 from './assets/questionpic1.png';
+import questionpic2 from './assets/questionpic2.png';
+import questionpic3 from './assets/questionpic3.png';
+import questionpic4 from './assets/questionpic4.png';
 
 let db = firebase.database();
 let randomNumber = Math.floor(Math.random() * 90000) + 10000;
@@ -82,22 +86,21 @@ const Questions = ({ dataStore, history }) => {
   if (questionNumber === 0) {
     console.log('ik ga in de image');
     img = [];
-    img.push('/static/media/questionpic.573fb89b.png');
+    img.push(questionpic4);
   } else if (questionNumber === 1) {
     img = [];
-    img.push('/static/media/questionpic1.90aa7212.png');
+    img.push(questionpic3);
   } else if (questionNumber === 2) {
     img = [];
-    img.push('/static/media/questionpic2.92f2120e.png');
+    img.push(questionpic2);
   } else if (questionNumber === 3) {
     img = [];
-    img.push('/static/media/questionpic3.e051ef00.png');
+    img.push(questionpic);
   } else if (questionNumber === 4) {
     img = [];
-    img.push('/static/media/questionpic4.3c170e44.png');
+    img.push(questionpic1);
   } else if (questionNumber === 5) {
     img = [];
-    img.push('/static/media/questionpic4.3c170e44.png');
   }
 
   console.log(img[0]);
