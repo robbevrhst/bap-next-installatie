@@ -95,6 +95,8 @@ const Questions = ({ dataStore, history }) => {
   } else if (questionNumber === 4) {
     img = [];
     img.push('/static/media/questionpic4.3c170e44.png');
+  } else if (questionNumber === 5) {
+    img = [];
   }
 
   console.log(img[0]);
